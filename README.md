@@ -18,17 +18,26 @@ report pages is produced by running it.
 notebooks/Group10_EDA_Code.ipynb           143 cells (95 code, 48 markdown), 26 figures, 0 errors   — 5 pts
 Discussion_Slides/Group10_EDA_Slides.pdf   report pages: a cover plus 5 content pages, 16:9         — 15 pts
 data/raw/README.md                         how to place the course dataset
-requirements.txt                           pinned runtime dependencies
-requirements-docs.txt                      documentation toolchain
-requirements-lock.txt                      full pip freeze of the environment that produced the outputs
+requirements.txt                           pinned runtime dependencies — the pip route
+environment.yml                            the same pins as a conda environment — the conda route
 ```
 
 ---
 
 ## Running the analysis from a fresh clone
 
-**1. Create the environment** (Python 3.11; `requirements.txt` is fully pinned, so the results are reproducible
-byte for byte):
+**1. Create the environment.** Two routes, one pinned stack — Python 3.11 with the versions that produced
+these outputs, so either choice reproduces the analysis.
+
+**A. Conda** — from `environment.yml`:
+
+```bash
+conda env create -f environment.yml
+conda activate dt_mining
+python -m ipykernel install --user --name dt_mining --display-name "Python (dt_mining)"
+```
+
+**B. pip + venv** — from `requirements.txt`:
 
 ```bash
 python -m venv dt_mining
@@ -41,6 +50,10 @@ source dt_mining/bin/activate
 pip install -r requirements.txt
 python -m ipykernel install --user --name dt_mining --display-name "Python (dt_mining)"
 ```
+
+`environment.yml` deliberately pins the analysis packages through a `pip:` block rather than conda
+packages, so both routes resolve the same versions and conda-forge is not relied on to mirror every PyPI
+release.
 
 **2. Place the dataset.** Copy the course file to `data/raw/acdc_dataset.csv` (semicolon-separated, 31 columns,
 one row per membership record). It is course-provided and not redistributed here — see `data/raw/README.md`.
