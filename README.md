@@ -17,7 +17,8 @@ report pages is produced by running it.
 ```
 notebooks/Group10_EDA_Code.ipynb           143 cells (95 code, 48 markdown), 26 figures, 0 errors   — 5 pts
 Discussion_Slides/Group10_EDA_Slides.pdf   report pages: a cover plus 5 content pages, 16:9         — 15 pts
-data/raw/README.md                         how to place the course dataset
+data/raw/acdc_dataset.csv                    the course extract, committed — 15,465 rows x 31 columns
+data/raw/README.md                           what the extract is, and how it must be read
 requirements.txt                           pinned runtime dependencies — the pip route
 environment.yml                            the same pins as a conda environment — the conda route
 ```
@@ -55,8 +56,10 @@ python -m ipykernel install --user --name dt_mining --display-name "Python (dt_m
 packages, so both routes resolve the same versions and conda-forge is not relied on to mirror every PyPI
 release.
 
-**2. Place the dataset.** Copy the course file to `data/raw/acdc_dataset.csv` (semicolon-separated, 31 columns,
-one row per membership record). It is course-provided and not redistributed here — see `data/raw/README.md`.
+**2. The dataset is already in the repository.** `data/raw/acdc_dataset.csv` is the course extract — 15,465 rows,
+31 columns, semicolon-separated — committed so a clone runs with no setup step beyond the environment.
+`data/raw/README.md` describes it and stays course-provided material rather than the group's to redistribute
+further.
 
 **3. Run the notebook end to top.** Open `notebooks/Group10_EDA_Code.ipynb`, select the kernel
 **Python (dt_mining)**, then *Run > Run All*. The notebook creates its own output folders; nothing outside the
