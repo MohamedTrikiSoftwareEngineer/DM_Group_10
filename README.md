@@ -8,15 +8,15 @@
 This deliverable audits, cleans and explores the ACDC member data, engineers 12 features from it and
 states hypotheses about customer groups. **No clustering model is trained here** — that is Deliverable 2.
 The notebook is the single source of truth: every figure, every number and every cleaning decision in the
-report pages is produced by running it.
+slide deck is produced by running it.
 
 ---
 
 ## What the repository contains
 
 ```
-notebooks/Group10_EDA_Code.ipynb           143 cells (95 code, 48 markdown), 26 figures, 0 errors   — 5 pts
-Discussion_Slides/Group10_EDA_Slides.pdf   report pages: a cover plus 5 content pages, 16:9         — 15 pts
+notebooks/Group10_EDA_Code.ipynb           147 cells (99 code, 48 markdown), 29 figures, 0 errors   — 5 pts
+Discussion_Slides/Group10_EDA_Slides.pdf   a cover plus 5 slides, 16:9, no speaker notes          — 15 pts
 data/raw/acdc_dataset.csv                    the course extract, committed — 15,465 rows x 31 columns
 data/raw/README.md                           what the extract is, and how it must be read
 requirements.txt                           pinned runtime dependencies — the pip route
@@ -63,13 +63,13 @@ further.
 
 **3. Run the notebook end to top.** Open `notebooks/Group10_EDA_Code.ipynb`, select the kernel
 **Python (dt_mining)**, then *Run > Run All*. The notebook creates its own output folders; nothing outside the
-repository is needed and no internet access is required. It writes:
+repository is needed and no internet access is required. Figures are displayed inline only; nothing is
+saved as an image file. The notebook writes two data files:
 
 | Output | Contents |
 |---|---|
 | `data/processed/acdc_cleaned.csv` | 15,450 rows x 103 columns: 31 original + 52 flag columns + 12 engineered features + 8 derived |
 | `data/processed/results.json` | every number quoted anywhere in the deliverable |
-| `reports/figures/eda/*.png` | the 26 figures at `dpi=200`, the same images embedded in the notebook |
 
 A full run takes a few minutes. The committed notebook already carries the executed outputs, so reading it
 needs no setup at all.
@@ -105,7 +105,7 @@ deliverable.
 
 Every cleaning rule follows the same shape — **evidence, decision, fix, `flag_*` column** — so nothing is silently
 changed and the marker can audit each decision against the raw file. The 74% figure for ended memberships is a
-**cumulative status share across the three-year window, not an annual churn rate**; the report pages say so
+**cumulative status share across the three-year window, not an annual churn rate**; the deck says so
 explicitly because the two readings imply different segmentations.
 
 Paths are relative (`os.path.join`), the notebook runs from `notebooks/`, and imports stay in the first code cell.
