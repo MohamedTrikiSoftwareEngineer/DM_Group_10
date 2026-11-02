@@ -44,3 +44,10 @@ site/
 # OS noise
 .DS_Store
 Thumbs.db
+
+# Local materials, course labs, and agent states
+checking_notebooks/
+.freebuff/
+.kilo/
+.kilocode/
+
