@@ -4,7 +4,7 @@ The dashboard applies the notebook cleaning and feature engineering, then gives
 stakeholders basic filters, distribution charts and a member drill-down.
 
 Run from this folder:
-    streamlit run app.py
+    streamlit run streamlit_app.py
 """
 import numpy as np
 import pandas as pd
@@ -476,7 +476,7 @@ st.caption("Interactive EDA dashboard using the cleaned member data and engineer
 try:
     result = load_cleaned(DATA_FILE)
 except FileNotFoundError:
-    st.error("Put acdc_dataset.csv in the same folder as app.py, then run the app again.")
+    st.error("Put acdc_dataset.csv in the same folder as streamlit_app.py, then run the app again.")
     st.stop()
 
 df = result["df"]

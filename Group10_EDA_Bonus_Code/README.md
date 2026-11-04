@@ -8,7 +8,7 @@ Install the packages, then run the app from this folder:
 
 ```bash
 pip install -r requirements.txt
-streamlit run app.py
+streamlit run streamlit_app.py
 ```
 
 The dashboard reads `acdc_dataset.csv` from the same folder.
@@ -62,6 +62,6 @@ The drill-down follows the sidebar filters and can be narrowed further by plan, 
 
 ## Files
 
-- `app.py`: the Streamlit dashboard and notebook cleaning rules;
+- `streamlit_app.py`: the Streamlit dashboard and notebook cleaning rules;
 - `requirements.txt`: packages needed to run it;
 - `acdc_dataset.csv`: the semicolon-separated ACDC data.
