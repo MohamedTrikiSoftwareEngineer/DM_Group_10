@@ -3,15 +3,18 @@
 The dashboard applies the notebook cleaning and feature engineering, then gives
 stakeholders basic filters, distribution charts and a member drill-down.
 
-Run from this folder:
-    streamlit run streamlit_app.py
+Run it with either of these:
+    streamlit run Group10_EDA_Bonus_Code/streamlit_app.py    from the repository root
+    streamlit run streamlit_app.py                           from this folder
 """
+import pathlib
+
 import numpy as np
 import pandas as pd
 import plotly.express as px
 import streamlit as st
 
-DATA_FILE = "acdc_dataset.csv"
+DATA_FILE = pathlib.Path(__file__).resolve().parent / "acdc_dataset.csv"
 DAYS_PER_MONTH = 365.25 / 12
 NO_END_DATE = pd.Timestamp("1970-01-01")
 FALLBACK_REFERENCE_DATE = pd.Timestamp("2024-01-01")
@@ -476,7 +479,10 @@ st.caption("Interactive EDA dashboard using the cleaned member data and engineer
 try:
     result = load_cleaned(DATA_FILE)
 except FileNotFoundError:
-    st.error("Put acdc_dataset.csv in the same folder as streamlit_app.py, then run the app again.")
+    st.error(
+        f"Could not find {DATA_FILE.name} next to streamlit_app.py. "
+        f"The app looked in {DATA_FILE.parent}."
+    )
     st.stop()
 
 df = result["df"]

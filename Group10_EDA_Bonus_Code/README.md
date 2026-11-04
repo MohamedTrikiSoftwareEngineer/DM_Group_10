@@ -4,14 +4,30 @@ Interactive EDA dashboard for Deliverable 1, Option 3.
 
 ## Run it
 
-Install the packages, then run the app from this folder:
+Install the packages, then start the app:
 
 ```bash
 pip install -r requirements.txt
 streamlit run streamlit_app.py
 ```
 
-The dashboard reads `acdc_dataset.csv` from the same folder.
+Both commands work from this folder or from the repository root, using
+`streamlit run Group10_EDA_Bonus_Code/streamlit_app.py`. The app always reads
+the copy of `acdc_dataset.csv` that sits next to it, so the folder can be moved
+or zipped and still run.
+
+## Deploy it
+
+On Streamlit Community Cloud, connect this repository and set the three app
+fields to:
+
+- branch: `Mohamed`;
+- app entry point: `Group10_EDA_Bonus_Code/streamlit_app.py`;
+- Python requirements file: `Group10_EDA_Bonus_Code/requirements.txt`.
+
+The requirements file at the repository root is for the notebook and does not
+install Streamlit, so it must not be used here. No API keys or secrets are
+needed, the app makes no network calls, and it never writes to the data.
 
 ## Cleaning
 
