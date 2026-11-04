@@ -70,3 +70,13 @@ To run it locally, follow `Group10_EDA_Bonus_Code/README.md`.
 ## Team
 
 Diogo Gaspar, Gustavo Carvalho and Mohamed Triki.
+
+## AI usage statement
+
+**Diogo** used Claude Code, connected to Deepnote through MCP, to brainstorm directions to explore, to investigate data problems in more depth and test conclusions against the data, and to write code to our specification, including reviewing and consolidating the group's earlier code into the final notebook. It was also used to understand each other's code, to organise our reasoning and conclusions into concise Markdown, to produce the slides from a plan the group had defined, and for version control and the READMEs.
+
+**Gustavo** used ChatGPT, connected to Deepnote through MCP, to clarify doubts, to help identify and correct errors in the notebook code (mainly data visualization in seaborn and matplotlib, and syntax in pandas and numpy), and to review grammar and wording so the written explanations were clearer.
+
+**Mohamed** used Qoder for coding help (pandas operations and matplotlib formatting), building the dashboard, brainstorming exploratory customer hypotheses, proofreading and repository work.
+
+Overall, our contribution exceeded that of the AI tools. We used them to write code, check results and analyse large volumes of data faster, to structure our writing and to brainstorm. The group made the final decisions on what to explore, which conclusions to draw and what to include, and takes responsibility for the submitted work.
