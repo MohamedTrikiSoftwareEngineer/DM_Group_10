@@ -1,41 +1,42 @@
-# github repo link
+# ACDC Member Segmentation: Exploratory Data Analysis
 
-https://github.com/MohamedTrikiSoftwareEngineer/DM_Group_10
+Data Mining, NOVA IMS, 2026-27. Group 10, Delivery 1.
 
-# ACDC Coworking EDA: Group 10
+## Summary
 
-Data Mining, NOVA IMS, Fall 2026-2027 | Deliverable 1, due 4 November 2026
+Amazing Creative Desk Coworking (ACDC) wants to segment its members. This deliverable covers the exploratory stage, following CRISP-DM: we audit and clean the membership data (15,465 rows and 31 columns, 14,840 members after cleaning), explore it, build features and propose the groups to test in Deliverable 2. No clustering model is trained here.
 
-This deliverable explores the ACDC membership data, assesses its quality, engineers features and proposes customer groups to test in Deliverable 2. No clustering model is trained here.
+## What is in this repository
 
-## Graded files
+| Path | Content |
+|---|---|
+| `notebooks/Group10_EDA_Code.ipynb` | The analysis, with all cells executed |
+| `notebooks/acdc_dataset.csv` | The original dataset from Moodle, separated by `;` |
+| `Discussion_Slides/Group10_EDA_Slides.pdf` | Discussion slides (`.pptx` version in the same folder) |
+| `Group10_EDA_Bonus_Code/` | Bonus: interactive dashboard, with its own README and requirements |
+| `requirements.txt`, `environment.yml` | The notebook environment, for pip and for conda |
 
-- [Jupyter notebook](notebooks/Group10_EDA_Code.ipynb): full analysis, with all cells executed and figures shown inline.
-- [Discussion slides](Discussion_Slides/Group10_EDA_Slides.pdf): a cover and five content slides with the main findings.
-- [Bonus dashboard](Group10_EDA_Bonus_Code/README.md): the interactive EDA explorer, live at https://group10-acdc-eda-dashboard.streamlit.app/.
+The notebook has six sections:
 
-The raw course extract is in `data/raw/`, so the notebook runs without any download.
+1. Business Understanding
+2. Data Understanding: raw data audit
+3. Data Preparation: cleaning
+4. Data Understanding: exploration of the cleaned data
+5. Data Preparation: engineered features
+6. Towards Modelling
 
-## Running the notebook
+## How to run the notebook
 
-Set up the environment with either pip or conda.
-
-**pip**
+Clone the repository:
 
 ```bash
-python -m venv dt_mining
-
-# Windows
-dt_mining\Scripts\activate
-
-# macOS / Linux
-source dt_mining/bin/activate
-
-pip install -r requirements.txt
-jupyter notebook notebooks/Group10_EDA_Code.ipynb
+git clone https://github.com/MohamedTrikiSoftwareEngineer/DM_Group_10.git
+cd DM_Group_10
 ```
 
-**conda**
+Then create the environment with **one** of the two options below. Both use **Python 3.11** and install the same package versions.
+
+**Option 1: conda** (installs Python 3.11 for you)
 
 ```bash
 conda env create -f environment.yml
@@ -43,43 +44,29 @@ conda activate dt_mining
 jupyter notebook notebooks/Group10_EDA_Code.ipynb
 ```
 
-Then select **Restart & Run All**. The notebook only reads the raw extract and writes no files. It looks for `acdc_dataset.csv` next to itself, then in `data/raw/`, then in `../data/raw/`, so it also runs from a copied folder.
+**Option 2: pip** (needs Python 3.11 already installed)
 
-## Notebook contents
+```bash
+# Windows
+py -3.11 -m venv dt_mining
+dt_mining\Scriptsctivate
 
-1. Setup: versions, palette and variable documentation
-2. Data understanding: shape, types and first statistics
-3. Data-quality assessment: duplicates, missing values, types, contradictions, implausible values and heavy tails
-4. Data-quality handling: documented decisions, one flag per rule and a quality log
-5. Univariate analysis: distributions, spread and category frequencies
-6. Relationships: value vs. usage, plan vs. status and within-group correlations
-7. Time trends and add-ons: joins, leaves, cohorts, add-on consistency and co-usage, and the missingness pattern
-8. Feature engineering: base derivations and engineered features, each justified
-9. Engineered feature patterns: distributions, correlations and a redundancy test
-10. Anomaly screening: a single labelled diagnostic, with members flagged but not removed
-11. Clustering-reliability risks: a register measured in members and ranked by impact
-12. Behavioural signals and group hypotheses: six candidate groups and the rule for the expected cluster count
-13. Conclusion: answers to the brief's four questions and the hand-over to Deliverable 2
+# macOS / Linux
+python3.11 -m venv dt_mining
+source dt_mining/bin/activate
 
-Valid extreme values are kept. The anomaly score is used to report and compare members, not to delete or cap them. The notebook runs no clustering, dimensionality reduction or train/test split.
+pip install -r requirements.txt
+jupyter notebook notebooks/Group10_EDA_Code.ipynb
+```
+
+**Data file:** the notebook reads `acdc_dataset.csv` from its own folder. The repository already has it there. If you only downloaded the `.ipynb`, put the original `;`-separated CSV in the same folder, with that name.
+
+## Bonus dashboard
+
+Live version: https://group10-acdc-eda-dashboard.streamlit.app/
+
+To run it locally, follow `Group10_EDA_Bonus_Code/README.md`.
 
 ## Team
 
-- Gustavo Carvalho
-- Diogo Gaspar
-- Mohamed Triki
-
-## AI usage statement
-
-In line with the course guidelines, this statement is also disclosed on the notebook cover. ChatGPT and Claude were used for coding syntax help (pandas operations and matplotlib formatting), for brainstorming exploratory customer hypotheses and for proofreading text descriptions. All analytical insights, cleaning decisions and business interpretations are the group's own work.
-
-## Group branches
-
-Machine Learning homework (Everything & Then Some, repeat purchase prediction).
-
-| Branch | Owner |
-|---|---|
-| `gustavo` | Gustavo |
-| `Diogo` | Diogo |
-| `vasco` | Vasco |
-| `mohamed` | Mohamed |
+Diogo Gaspar, Gustavo Carvalho and Mohamed Triki.
