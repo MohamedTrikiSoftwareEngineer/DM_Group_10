@@ -1,0 +1,27 @@
+# Conda route to the same environment the analysis was produced in.
+#
+# The deliverable runs on either route, and both give the identical pinned stack:
+#   conda env create -f environment.yml && conda activate dt_mining      (this file)
+#   python -m venv dt_mining && pip install -r requirements.txt          (requirements.txt)
+#
+# Conda provides only the interpreter and pip; every analysis package is pinned through the pip
+# block below so the versions match requirements.txt exactly. That keeps one source of truth for
+# the pins, and conda-forge is not relied on to have published each PyPI release. The build of
+# this deliverable used CPython 3.11.0 on Windows; python=3.11 solves on Linux and macOS too.
+name: dt_mining
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - setuptools
+  - wheel
+  - pip:
+      - numpy==2.3.5
+      - pandas==2.3.3
+      - scipy==1.16.3
+      - matplotlib==3.10.0
+      - seaborn==0.13.2
+      - jupyter==1.1.1
+      - notebook==7.6.3
+      - ipykernel==7.4.0
