@@ -49,7 +49,7 @@ jupyter notebook notebooks/Group10_EDA_Code.ipynb
 ```bash
 # Windows
 py -3.11 -m venv dt_mining
-dt_mining\Scriptsctivate
+dt_mining\Scripts\activate
 
 # macOS / Linux
 python3.11 -m venv dt_mining
