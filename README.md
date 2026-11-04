@@ -1,3 +1,7 @@
+# github repo link
+
+https://github.com/MohamedTrikiSoftwareEngineer/DM_Group_10
+
 # ACDC Coworking EDA: Group 10
 
 Data Mining, NOVA IMS, Fall 2026-2027 | Deliverable 1, due 4 November 2026
